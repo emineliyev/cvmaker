@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}Cv Maker{% endblock %}</title>
+        <!-- Bootstrap Css -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{% static 'assets/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- simplebar css -->
+    <link href="{% static 'assets/libs/simplebar/simplebar.min.css' %}" rel="stylesheet">
+    <!-- App Css-->
+    <link href="{% static 'assets/css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/css/wizard.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/css/wizard-3.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/css/cropper.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<nav class="navbar navbar-light navbar-expand-md shadow py-3">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'cv:index' %}">
+            <span>Logo</span>
+        </a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-3">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+{% block content %}{% endblock %}
+
+
+
+<!-- JAVASCRIPT -->
+<script src="{% static 'assets/libs/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/libs/metismenu/metisMenu.min.js' %}"></script>
+<script src="{% static 'assets/libs/simplebar/simplebar.min.js' %}"></script>
+<script src="{% static 'assets/libs/node-waves/waves.min.js' %}"></script>
+<!--VALIDATION-->
+<script src="{% static 'assets/libs/parsleyjs/parsley.min.js' %}"></script>
+<script src="{% static 'assets/js/pages/form-validation.init.js' %}"></script>
+<script src="{% static 'assets/js/app.js' %}"></script>
+<script src="{% static 'assets/js/cropper.min.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>

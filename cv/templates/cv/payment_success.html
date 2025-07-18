@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5 text-center">
+    <h2>Ödəniş uğurla tamamlandı ✅</h2>
+    <p>CV-niz uğurla yaradıldı. Onu PDF formatında yükləyə bilərsiniz.</p>
+
+    <a href="{% url 'cv:download_pdf' cv_id=cv_id %}" target="_blank" class="btn btn-primary mt-4">PDF yüklə</a>
+    <a href="{% url 'cv:index' %}" class="btn btn-primary mt-4">Əsas səhifə</a>
+</div>
+
+<script>
+    localStorage.clear();
+</script>
+{% endblock %}

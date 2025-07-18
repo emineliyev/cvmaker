@@ -1,0 +1,109 @@
+{% extends 'cr-base.html' %}
+{% load static %}
+{% block title %}
+	Şablon seçimi
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-content">
+        <div class="container">
+            <!-- Wizard Step Indicators -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="wizard-container">
+                        <div class="wizard-progress">
+                            <div class="wizard-progress-bar" style="width: 100%;"></div>
+                        </div>
+                        <ul class="wizard-steps">
+                            <li class="wizard-step completed">
+                                <span class="wizard-step-circle">1</span>
+                                <span class="wizard-step-label">Əsas məlumatlar</span>
+                            </li>
+                            <li class="wizard-step completed">
+                                <span class="wizard-step-circle">2</span>
+                                <span class="wizard-step-label">Təcrübə</span>
+                            </li>
+                            <li class="wizard-step active">
+                                <span class="wizard-step-circle">3</span>
+                                <span class="wizard-step-label">Şablon seçimi</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template Selection -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fas fa-file-signature fs-17 text-muted"></i></div>
+                    <h3 class="card-title">Şablon seçin</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center"
+                         id="templatesContainer">
+                        {% for template in templates %}
+                        <div class="col">
+                            <div class="template-card-container"
+                                 data-template="{{ template.name }}"
+                                 data-default-color="{{ template.default_color }}"
+                                 data-available-colors="{{ template.available_colors|join:',' }}"
+                                 data-color="{{ template.color }}"
+                                 data-preview-url="{% url 'cv:preview-template' template.name %}">
+                                <div class="template-preview">
+                                    <iframe src="{% url 'cv:preview-template' template.name %}?color={{ template.color }}&scale=0.3333" scrolling="no"></iframe>
+                                </div>
+                                <div class="template-info mt-2 d-flex justify-content-center align-items-center">
+                                    <span class="template-name">{{ template.display_name }}</span>
+                                    <div class="color-preview" style="background-color: {{ template.color }}"></div>
+                                </div>
+                                <div class="selected-badge">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="card-footer card-footer-bordered text-center mt-3">
+                        <button id="downloadBtn" class="btn btn-success btn-lg" disabled>
+                            <i class="fas fa-download me-1"></i> Yüklə
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="{% url 'cv:step2' %}" class="text-secondary">
+                    <i class="fas fa-angle-left"></i> <u>Əvvəlki addım</u>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-preview">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Şablon Önizləmə</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="preview-container">
+                        <iframe id="templatePreviewFrame" scrolling="no"></iframe>
+                    </div>
+                    <div class="color-options mt-3">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="selectTemplateBtn">
+                        <i class="fas fa-check me-2"></i> Seçin
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'assets/js/step-3.js' %}"></script>
+{% endblock %}

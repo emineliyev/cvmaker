@@ -1,0 +1,188 @@
+:root {
+    --primary-color: #4e54c8;
+    --secondary-color: #8f94fb;
+}
+
+.template-card-container {
+    width: 90%;
+    height: 320px;
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.1875rem 0.625rem rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.template-card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.template-card-container.selected {
+    border-color: #41c3a9;
+
+}
+
+.template-preview {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    min-height: 0; /* Важно для flex-контейнера */
+}
+
+.template-preview iframe {
+    position: absolute;
+    width: 810px;
+    height: 1110px;
+    transform: scale(0.3333);
+    transform-origin: top left;
+    border: none;
+    pointer-events: none;
+    overflow: hidden !important;
+}
+
+.selected-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #41c3a9;
+    color: white;
+    padding: 6px 6px;
+    border-radius: 12px;
+    font-size: 8px;
+    line-height: 4px;
+    font-weight: 500;
+    display: none;
+    z-index: 10;
+}
+
+.template-card-container.selected .selected-badge {
+    display: block;
+}
+
+/* Preview Modal */
+.modal-preview .modal-dialog {
+    max-width: 560px;
+}
+
+.modal-preview .modal-content {
+    height: 570px;
+    width: 400px;
+}
+
+.modal-preview .modal-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 70px);
+}
+
+.preview-container {
+    width: 398px;
+    height: 630px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.preview-container iframe {
+    position: absolute;
+    width: 743px; /* 520 / 0.7 */
+    height: 900px; /* 630 / 0.7 */
+    transform: scale(0.7);
+    transform-origin: top left;
+    border: none;
+    overflow: hidden !important;
+}
+
+.color-options {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    justify-content: center;
+    border-top: 1px solid #eee;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.selected {
+    border: 2px solid #333;
+    transform: scale(1.1);
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+/* Убираем скроллы у iframe */
+iframe {
+    overflow: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+iframe::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+
+@media (max-width: 576px) {
+    .modal-preview .modal-dialog {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .modal-preview .modal-content {
+        height: 100vh;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .modal-preview .modal-body {
+        height: calc(100vh - 140px); /* без header и footer */
+        overflow-y: auto;
+        padding: 0;
+    }
+
+    .preview-container {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .preview-container iframe {
+        width: 300%;
+        height: 300%;
+        transform: scale(0.33);
+        transform-origin: top left;
+    }
+
+    .modal-footer {
+        padding: 1rem;
+    }
+
+    .color-options {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+}

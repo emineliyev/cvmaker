@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container benefits-container py-4">
+    <div class="row align-items-center">
+
+        <div class="col-md-6">
+            <h2 class="fw-bold mb-4">Benefits</h2>
+            <ul class="list-unstyled benefits-list">
+                <li><i class="fas fa-check-circle text-success me-2"></i> An account will be created</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Modify your resume in any place</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Create <strong>unlimited resumes</strong></li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Access to <strong>361,817</strong> vacancies
+                </li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> <strong>Professional</strong> resume templates
+                </li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> <strong>Send and track</strong> your job
+                    applications
+                </li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Automatically renewed after 7 days</li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Create <strong>application letters</strong>
+                    easily
+                </li>
+                <li><i class="fas fa-check-circle text-success me-2"></i> Cancel any time</li>
+            </ul>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-center mb-5">
+            <div class="resume-preview-box shadow">
+                <iframe
+                        src="{% url 'cv:preview-template' template_name %}?color={{ accent_color }}"
+                        frameborder="0"
+                        class="resume-preview-iframe"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="payment-card p-4 shadow rounded bg-white">
+            <!-- Логотипы -->
+            <div class="d-flex align-items-center mb-3 gap-3 flex-wrap">
+                <img src="https://img.icons8.com/color/48/000000/visa.png" height="24" alt="Visa"/>
+                <img src="https://img.icons8.com/color/48/000000/mastercard.png" height="24" alt="MasterCard"/>
+                <img src="https://img.icons8.com/color/48/000000/amex.png" height="24" alt="Amex"/>
+                <img src="https://img.icons8.com/color/48/000000/paypal.png" height="24" alt="PayPal"/>
+            </div>
+
+            <!-- Зеленая линия -->
+            <div class="payment-progress mb-3"></div>
+
+            <!-- Текст -->
+            <p class="text-muted mb-3">Please enter your card details below to make a payment.</p>
+
+            <!-- Поля -->
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="card_number" class="form-label">Card number</label>
+                    <input type="text" class="form-control" id="card_number" placeholder="1234 5678 9012 3456"
+                           required/>
+                </div>
+
+                <!-- Лого под полем -->
+                <div class="mb-3 d-flex gap-2">
+                    <img src="https://img.icons8.com/color/24/000000/discover.png" height="18"/>
+                    <img src="https://img.icons8.com/color/24/000000/visa.png" height="18"/>
+                    <img src="https://img.icons8.com/color/24/000000/mastercard.png" height="18"/>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Expiry date</label>
+                        <input type="text" class="form-control" placeholder="MM/YY" required/>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <label class="form-label">CVC / CVV</label>
+                        <input type="text" class="form-control" placeholder="3 digits" required/>
+                    </div>
+                </div>
+
+                <!-- Кнопка -->
+                <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill fs-5">
+                    <i class="fas fa-lock me-2"></i> Ödə ₼ 2.99
+                </button>
+            </form>
+
+            <!-- Цена -->
+            <div class="text-end mt-3">
+                <strong class="fs-5 text-success">₼ 2.99</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'assets/js/check-dm.js' %}"></script>
+{% endblock %}

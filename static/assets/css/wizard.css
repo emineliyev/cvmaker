@@ -1,0 +1,103 @@
+.wizard-container {
+    position: relative;
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+
+.wizard-progress {
+    height: 4px;
+    background-color: #e9ecef;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    border-radius: 2px;
+}
+
+.wizard-progress-bar {
+    height: 100%;
+    background-color: var(--bs-primary);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.wizard-steps {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wizard-step {
+    text-align: center;
+    position: relative;
+}
+
+.wizard-step-circle {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #e9ecef;
+    color: #6c757d;
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.wizard-step.active .wizard-step-circle {
+    background: var(--bs-primary);
+    color: white;
+}
+
+.wizard-step.completed .wizard-step-circle {
+    background: var(--bs-success);
+    color: white;
+}
+
+.wizard-step-label {
+    display: block;
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.wizard-step.active .wizard-step-label {
+    color: var(--bs-primary);
+    font-weight: 600;
+}
+
+.wizard-step.completed .wizard-step-label {
+    color: var(--bs-success);
+}
+
+/* Profile Photo Styles */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.hover-opacity-100:hover {
+    opacity: 1 !important;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+#imageContainer {
+    display: inline-block;
+    position: relative;
+}
+
+.image-overlay-actions {
+    z-index: 10;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+#imageContainer:hover .image-overlay-actions {
+    display: flex;
+}

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Əsas səhifə
+{% endblock %}
+
+{% block content %}
+<section>
+    <div style="height: 600px;background-image: url(https://cdn.bootstrapstudio.io/placeholders/1400x800.png);background-position: center;background-size: cover;">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                    <div style="max-width: 350px;">
+                        <h1 class="text-uppercase fw-bold">Biben dum<br/>fringi dictum, augue purus</h1>
+                        <p class="my-3">Tincidunt laoreet leo, adipiscing taciti tempor. Primis senectus sapien, risus
+                            donec ad fusce augue interdum.</p><a class="btn btn-outline-primary btn-lg" role="button"
+                                                                 href="{% url 'cv:step1' %}">İndi tərtib edt</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container py-4 py-xl-5">
+    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+        <div class="col">
+            <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
+                <div class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-heart">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"/>
+                    </svg>
+                </div>
+                <div class="px-3">
+                    <h4>Title</h4>
+                    <p>Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras
+                        aenean.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
+                <div class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-heart">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"/>
+                    </svg>
+                </div>
+                <div class="px-3">
+                    <h4>Title</h4>
+                    <p>Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras
+                        aenean.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
+                <div class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-heart">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M6.979 3.074a6 6 0 0 1 4.988 1.425l.037 .033l.034 -.03a6 6 0 0 1 4.733 -1.44l.246 .036a6 6 0 0 1 3.364 10.008l-.18 .185l-.048 .041l-7.45 7.379a1 1 0 0 1 -1.313 .082l-.094 -.082l-7.493 -7.422a6 6 0 0 1 3.176 -10.215z"/>
+                    </svg>
+                </div>
+                <div class="px-3">
+                    <h4>Title</h4>
+                    <p>Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras
+                        aenean.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="photo-gallery py-4 py-xl-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-8 col-xl-6 text-center mx-auto">
+        <h2>Şablon nümünələri</h2>
+        <p class="w-lg-50">
+          Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.
+        </p>
+      </div>
+    </div>
+
+    <!--TEMPLATES-->
+    <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos">
+          <!-- Картинка + кнопки ITEM -->
+          <div class="col item mb-4">
+            <div class="position-relative image-wrapper">
+              <img id="image-1" class="img-fluid rounded w-100" src="../../../static/assets/img/modern/orange.webp" alt="Image 1">
+              <!-- Кнопки справа от картинки -->
+                <div class="button-panel">
+                  <button style="background-color: #e0aa28" class="btn rounded-circle mb-2"
+                    onclick="changeImage('image-1', '../../../static/assets/img/modern/orange.webp')" title="Orange"></button>
+                  <button style="background-color: #4e54c8" class="btn rounded-circle mb-2"
+                    onclick="changeImage('image-1', '../../../static/assets/img/modern/blue.webp')" title="Blue"></button>
+                  <button style="background-color: #007bff" class="btn rounded-circle mb-2"
+                    onclick="changeImage('image-1', '../../../static/assets/img/modern/sky.webp')" title="Sky"></button>
+                  <button style="background-color: #28a745" class="btn rounded-circle mb-2"
+                    onclick="changeImage('image-1', '../../../static/assets/img/modern/green.webp')" title="Green"></button>
+                  <button style="background-color: #dc3545" class="btn rounded-circle mb-2"
+                    onclick="changeImage('image-1', '../../../static/assets/img/modern/red.webp')" title="Red"></button>
+                </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
