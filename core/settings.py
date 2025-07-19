@@ -135,3 +135,8 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
 
+PADDLE_ENV = "production"
+PADDLE_VENDOR_ID = "241735"
+PADDLE_API_KEY = "pdl_live_apikey_01k0gsxkx82513dq7pnwsh8jkx_ew6PPTFCzvk8nfjrX1HYSb_Aez"  # ваш
+PADDLE_CLIENT_TOKEN = "live_1f5818bc38c48478a89c745f3ce"
+PADDLE_PRODUCT_ID = "pro_01k0efjym8yp9zn85gsttpyj1c"
