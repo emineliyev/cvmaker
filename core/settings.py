@@ -126,17 +126,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Не удалять сессию при закрытии браузера
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 7  # Срок жизни cookie — 7 дней (в секундах)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 7
 
 
-CELERY_BROKER_URL = 'amqp://localhost'  # или 'amqp://guest:guest@localhost:5672//' если с Docker
+CELERY_BROKER_URL = 'amqp://localhost'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
 
 PADDLE_ENV = "production"
 PADDLE_VENDOR_ID = "241735"
-PADDLE_API_KEY = "pdl_live_apikey_01k0gsxkx82513dq7pnwsh8jkx_ew6PPTFCzvk8nfjrX1HYSb_Aez"  # ваш
+PADDLE_API_KEY = "pdl_live_apikey_01k0gsxkx82513dq7pnwsh8jkx_ew6PPTFCzvk8nfjrX1HYSb_Aez"
 PADDLE_CLIENT_TOKEN = "live_1f5818bc38c48478a89c745f3ce"
 PADDLE_PRODUCT_ID = "pro_01k0efjym8yp9zn85gsttpyj1c"
