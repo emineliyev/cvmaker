@@ -61,26 +61,27 @@ function restoreFieldValue(el) {
     if (saved !== null) el.value = saved;
 }
 
+
 function addExperience() {
     const i = counters.experience++;
     const name = `experience-${i}`;
     const fields = templateBlock('Təcrübə', i, `
-        <div class="row mb-2">
-            <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4 mb-2">
                 <input class="form-control" name="${name}-position" placeholder="Vəzifə">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-2">
                 <input class="form-control" name="${name}-employer" placeholder="İşəgötürən">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-2">
                 <input class="form-control" name="${name}-city" placeholder="Şəhər">
             </div>
         </div>
-        <div class="row mb-2">
-            <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6 mb-2">
                 <input class="form-control" type="month" name="${name}-start_date">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-2">
                 <input class="form-control" type="month" name="${name}-end_date" id="${name}-end_date">
                 <div class="form-check mt-1">
                     <input class="form-check-input currently-working-checkbox" type="checkbox" 
@@ -116,28 +117,26 @@ function addExperience() {
     }
 }
 
-
-
 function addEducation() {
     const i = counters.education++;
     const name = `education-${i}`;
     const fields = templateBlock('Təhsil', i, `
             <div class="row mb-2">
-                <div class="col-md-4">
+                <div class="col-md-4 mb-2">
                     <input class="form-control" name="${name}-degree" placeholder="Dərəcə">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-2">
                     <input class="form-control" name="${name}-school" placeholder="Məktəb / Universitet">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-2">
                     <input class="form-control" name="${name}-city" placeholder="Şəhər">
                 </div>
             </div>
             <div class="row mb-2">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" type="month" name="${name}-start_date">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" type="month" name="${name}-end_date">
                 </div>
             </div>
@@ -156,22 +155,22 @@ function addCourse() {
     const name = `course-${i}`;
     const fields = templateBlock('Kurs', i, `
             <div class="row mb-2">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" name="${name}-name" placeholder="Kursun adı">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" name="${name}-institution" placeholder="Qurum">
                 </div>
             </div>
             <div class="row mb-2">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" type="month" name="${name}-start_date">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" type="month" name="${name}-end_date">
                 </div>
             </div>
-            <div class="row mb-2">
+            <div class="row">
                 <div class="col-12">
                     <textarea class="form-control" name="${name}-description" placeholder="Description"></textarea>
                 </div>
@@ -185,19 +184,19 @@ function addReference() {
     const i = counters.reference++;
     const name = `reference-${i}`;
     const fields = templateBlock('Referans', i, `
-            <div class="row mb-2">
-                <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" name="${name}-company" placeholder="Şirkət adı">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" name="${name}-contact_person" placeholder="Əlaqədar şəxs">
                 </div>
             </div>
-            <div class="row mb-2">
-                <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" name="${name}-phone" placeholder="Phone Number">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" name="${name}-email" placeholder="E-poçt">
                 </div>
             </div>
@@ -211,7 +210,7 @@ function addSkill() {
     const name = `skill-${i}`;
     const fields = templateBlock('Bacarıq', i, `
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 mb-2">
                     <input class="form-control" name="${name}-name" placeholder="Bacarıq">
                 </div>
                 <div class="col-md-4">
@@ -234,7 +233,7 @@ function addPortfolio() {
     const name = `project-${i}`;
     const fields = templateBlock('Layihə', i, `
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-2">
                     <input class="form-control" name="${name}-title" placeholder="Layihənin adı">
                 </div>
                 <div class="col-md-6">
@@ -251,7 +250,7 @@ function addLanguage() {
     const name = `language-${i}`;
     const fields = templateBlock('Dil', i, `
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 mb-2">
                     <input class="form-control" name="${name}-name" placeholder="Dil">
                 </div>
                 <div class="col-md-4">
